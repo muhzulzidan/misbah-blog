@@ -26,18 +26,18 @@ const IndexPage = ({ data }) => {
               const image = getImage(featuredImage);
 
               return (
-                <div key={node.id} className="bg-stone-50 rounded-lg shadow-sm transition duration-300 hover:shadow-md">
-                  <Link to={`/blog/${slug}`}>
-                    <GatsbyImage image={image} alt={title} className="rounded-t-lg" />
+                <div key={node.id} className="bg-stone-50 rounded-lg shadow-sm transition duration-300 hover:shadow-md lg:flex">
+                  <Link to={`/blog/${slug}`} className='lg:w-3/12'>
+                    <GatsbyImage image={image} alt={title} className="rounded-t-lg " />
                   </Link>
                   <div className="p-6">
-                    <h2 className="text-xl font-bold text-gray-800 mb-2">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">
                       <Link to={`/blog/${slug}`} className="hover:underline">
                         {title}
                       </Link>
                     </h2>
-                    <p className="text-gray-500 text-sm">{publishedDate}</p>
-                    <p>{renderRichText(node.content)}</p>
+                    <p className="text-gray-500 text-sm m-0">{publishedDate}</p>
+                    <p className="mt-4 line-clamp-3 ">{renderRichText(node.content)}</p>
                   </div>
                 </div>
               );
