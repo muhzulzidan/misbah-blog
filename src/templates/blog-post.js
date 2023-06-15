@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data }) => {
         contentfulBlogs: {
             // id,
             // slug,
-            publishedDate,
+            tanggal,
             title,
             // contentful_id,
             featuredImage,
@@ -56,7 +56,7 @@ const BlogPostTemplate = ({ data }) => {
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                             {title}
                         </h1>
-                        <p className="text-gray-500 text-sm">{publishedDate}</p>
+                        <p className="text-gray-500 text-sm">{tanggal}</p>
                     </div>
                     {image && (
                         <div className="w-2/12 justify-end flex">
@@ -93,7 +93,7 @@ export const query = graphql`
     contentfulBlogs(id: { eq: $id }) {
       id
       slug
-      publishedDate(formatString: "MMMM DD, YYYY")
+      tanggal(formatString: "MMMM DD, YYYY")
       title
       contentful_id
       featuredImage {
